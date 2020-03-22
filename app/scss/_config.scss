@@ -1,0 +1,85 @@
+// IMPORT SECTION
+
+@import "../../node_modules/normalize.css/normalize.css"; // (npm i --save-dev normalize.css)
+@import "fonts.scss"; // icomoon 
+@import "../../node_modules/slick-carousel/slick/slick.scss"; //slick css
+
+
+// USER VARIABLES SECTION
+
+$accent: #E31E25; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #777; // Text Color
+$black: #111; // Black color
+$white: #fff;
+$roboto: Roboto, sans-serif; // Roboto Font Family
+
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		// font-display: swap; // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
+@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
+
+
+// GENERAL DOCUMENT STYLES
+
+body {
+	font-family: $roboto;
+	font-size: $fontsize;
+	line-height: 24px;
+	color: $textcolor;
+	background: #F8F8F8;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+	width: 100%;
+}
+.container {
+	max-width: 1200px;
+	margin: 0px auto;
+	padding: 0 15px;
+}
+.btn__default {
+	color: $white;
+	background-color: $accent;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 12px 34px;
+	width: 270px;
+	text-align: center;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	&:hover {
+		background-color: #ce333e;
+	}
+}
+.btn__transparent {
+	background-color: transparent;
+	border: 1px solid $white;
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.25);
+	}
+}
